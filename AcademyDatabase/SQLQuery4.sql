@@ -1,6 +1,6 @@
-﻿CREATE DATABASE Trainees
+﻿CREATE DATABASE Academy
 
-CREATE TABLE [dbo].[Trainees] (
+CREATE TABLE Trainees (
     [TraineeID] CHAR (5) NOT NULL,
     [Name]      VARCHAR (20) NULL,
     [Course]    VARCHAR (20) NULL,
