@@ -3,8 +3,8 @@ using System.Threading.Channels;
 
 using (var db = new AcademyContext())
 {
+    Title();
     HandleInput(db);
-
 }
 
 void HandleInput(AcademyContext db)
@@ -136,4 +136,38 @@ void Delete(AcademyContext db, string ID)
     db.Trainees.Remove(trainee);
     db.SaveChanges();
     HandleInput(db);
+}
+
+static void WriteTitle(string input)
+{
+    foreach (char c in input)
+    {
+        Console.Write(c);
+        Thread.Sleep(0);
+    }
+    Console.WriteLine("");
+}
+
+static void Title()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        // Console.Clear();
+        if (i == 0) Console.ForegroundColor = ConsoleColor.Magenta;
+        else if (i == 1) Console.ForegroundColor = ConsoleColor.Red;
+        else if (i == 2) Console.ForegroundColor = ConsoleColor.Green;
+        else if (i == 3) Console.ForegroundColor = ConsoleColor.Blue;
+        else if (i == 4) Console.ForegroundColor = ConsoleColor.Black; WriteTitle(@"
+/$$$$$$$$                 /$$                                        
+|__  $$__/                |__/                                        
+   | $$  /$$$$$$  /$$$$$$  /$$ /$$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$
+   | $$ /$$__  $$|____  $$| $$| $$__  $$ /$$__  $$ /$$__  $$ /$$_____/
+   | $$| $$  \__/ /$$$$$$$| $$| $$  \ $$| $$$$$$$$| $$$$$$$$|  $$$$$$ 
+   | $$| $$      /$$__  $$| $$| $$  | $$| $$_____/| $$_____/ \____  $$
+   | $$| $$     |  $$$$$$$| $$| $$  | $$|  $$$$$$$|  $$$$$$$ /$$$$$$$/
+   |__/|__/      \_______/|__/|__/  |__/ \_______/ \_______/|_______/             "); Thread.Sleep(1000);
+        Console.SetCursorPosition(0, 0);
+    }
+    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.Clear();
 }
