@@ -1,4 +1,6 @@
-﻿CREATE DATABASE Academy
+﻿CREATE DATABASE Academy;
+
+USE Academy;
 
 CREATE TABLE Trainees (
     [TraineeID] CHAR (5) NOT NULL,
